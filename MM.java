@@ -21,11 +21,18 @@ public class MM {
         size++;
     }
     public void printIndex(int data) {
-        Node newNode = new Node(data);
+       Node currNode = head;
+       int index = 0;
 
-        if(newNode == 7) {
-            System.out.println(this.newNode);
+       while(currNode != null) {
+        if(currNode.data == data) {
+            System.out.println("Index of" + data + "is" + index);
+            return;
         }
+        currNode = currNode.next;
+        index++;
+       }
+       System.out.println(data + "not" + "found");
     }
     public void printList() {
         Node currNode = head;
@@ -47,6 +54,7 @@ public class MM {
         list.addFirst(2);
         list.addFirst(3);
         list.printList();
+        list.printIndex(7);
 
     } 
 }
